@@ -24,5 +24,11 @@ public class Route {
 	public final boolean isDouble() {
 		return isDouble;
 	}
+	public String toString() {
+		String output = city1 + " -> " + city2 + ", " + length;
+		if (this.isDouble())
+			output += ", Double-Route";
+		return output;
+	}
 
 }
