@@ -25,6 +25,14 @@ public class Game {
          for ( int i = 0; i < c1.length; i++ ) 
              destinationTicketDeck.add(new DestinationTicket( c1[i], c2[i], pts[i] ));
          */
+       DestinationTicket obj = new DestinationTicket();
+        
+       // testing function
+       System.out.println(obj.initADeck().element());
+       System.out.println(obj.getCity1());
+       
+       
+       
     }
 
 	public static void main(String[] args) {
