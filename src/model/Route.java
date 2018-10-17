@@ -8,10 +8,10 @@ import java.util.ArrayList;
  */
 
 public class Route {
-	private static String city1;
-	private static String city2;
-	private static int length;
-	private static boolean isDouble;
+	private String city1;
+	private String city2;
+	private int length;
+	private boolean isDouble;
 	// private Player claimedBy;
 
 	/*
@@ -33,7 +33,8 @@ public class Route {
 	public static ArrayList<Route> initRoutes() {
 		ArrayList<Route> list = new ArrayList<Route>();
 		for (int i = 0; i < c1.length; i++) {
-			list.add(new Route(c1[i], c2[i], len[i], dbl[i]));
+			Route r = new Route(c1[i], c2[i], len[i], dbl[i]);
+			list.add(r);
 		}
 		return list;
 	}
