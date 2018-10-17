@@ -57,7 +57,7 @@ public class DestinationTicket {
         return output; 
     }
 
-    public static Queue<DestinationTicket> initADeck()
+    public static Queue<DestinationTicket> initDeck()
     {
         /*
         c1 = hardcoiding start destination
