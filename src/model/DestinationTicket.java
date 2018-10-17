@@ -56,6 +56,7 @@ public class DestinationTicket {
         String output = city1 + " -> " + city2 + ", Points: " + points; 
         return output; 
     }
+
     public static Queue<DestinationTicket> initADeck()
     {
         /*
@@ -68,6 +69,7 @@ public class DestinationTicket {
         String[] c1 = new String[]{ "Portland", "Vancouver", "Denver", "Seattle", "Calgary", "Calgary", "Helena" }; 
         String[] c2 = new String[]{ "Phoenix", "Santa Fe", "El Paso", "Los Angeles", "Salt Lake City", "Phoenix", "Los Angeles" }; 
         int[] pts = new int[]{ 11, 13, 4, 9, 7, 13, 8}; 
+
          for ( int i = 0; i < c1.length; i++ ) 
              destinationTicketDeck.add(new DestinationTicket( c1[i], c2[i], pts[i] ));
          return destinationTicketDeck; 

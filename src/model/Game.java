@@ -1,7 +1,9 @@
 package model;
 
-public class Game {
+import java.util.LinkedList;
+import java.util.Queue;
 
+public class Game {
 	public static void main(String[] args) {
 		
 	}
