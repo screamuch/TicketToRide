@@ -22,8 +22,29 @@ public class DestinationTicket {
     }
     void setDestCard(String c1, String c2, int pts)
     {
-        city1 = c1; 
-        city2 = c2; 
-        points = pts; 
+        this.city1 = c1; 
+        this.city2 = c2; 
+        this.points = pts; 
+    }
+    String getCity1()
+    {
+        return this.city1; 
+    }
+    String getCity2()
+    {
+        return this.city2; 
+    }
+    int getPoints()
+    {
+        return this.points; 
+    }
+    public String toString()
+    {
+        String output = city1 + " " + city2 + " " + " " + points; 
+        return output; 
     }
 }
+
+
+
+
