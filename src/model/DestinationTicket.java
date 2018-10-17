@@ -38,9 +38,11 @@ public class DestinationTicket {
     {
         return this.points; 
     }
+    @Override
     public String toString()
     {
-        String output = city1 + " " + city2 + " " + " " + points; 
+        // returns destination card
+        String output = city1 + " -> " + city2 + ", Points: " + points; 
         return output; 
     }
 }
