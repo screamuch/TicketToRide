@@ -43,4 +43,11 @@ public class Game {
 		}
 		return -1;
 	}
+
+	// This method tests if the player has 2 or less trains left, which indicates end of game
+	public boolean outOfTrains(Player p) {
+		if (p.getTrainCount() < 3)
+			return true;
+		return false;
+	}
 }
