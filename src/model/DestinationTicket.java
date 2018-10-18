@@ -60,7 +60,7 @@ public class DestinationTicket {
     public static Queue<DestinationTicket> initDeck()
     {
         /*
-        c1 = hardcoiding start destination
+        c1 = hardcoding start destination
         c2 = end destination 
         pts = value of completed destination 
         destinationTickerDeck = hardcoding each destination card into queue

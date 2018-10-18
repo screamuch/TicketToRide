@@ -13,13 +13,6 @@ public class Game {
 
 	}
 
-	// Adeeb, test this:
-	/* TODO:
-	 * Create players like this:
-	 * player = new Player(...)
-	 * and put them in the arraylist
-	 */
-
 	// Setting up the game - prepare card decks, set players up
 	public void setup(ArrayList<Player> p) {
 		destinationTicketDeck = DestinationTicket.initDeck();
@@ -27,11 +20,9 @@ public class Game {
 		players = p;
 	}
 
-	// TODO:
-	// Adeeb, test this, too
 	/*
 	 * compare routes point worth from this function with the table from rules
-	 */
+	 */ 
 	public int routePointWorth(Route r) {
 		switch (r.getLength()) {
 		case 1: return 1;
