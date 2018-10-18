@@ -7,4 +7,12 @@ MAKE A BRANCH, COMMIT INTO IT AND MAKE A PULL REQUEST
 
 WHEN MERGING A PULL REQUEST - SQUASH AND FUCKING MERGE
 
+MAKE A NEW BRANCH FOR EACH NEW FEATURE, NAME ACCORDINGLY!
+
+Every time you start working on this:
+1. `git checkout master`
+2. `git pull`
+3. `git checkout <your_branch>`
+4. `git rebase master`
+
 <3 Peter
