@@ -22,9 +22,9 @@ class PlayerTest {
 	@Test
 	public void routePointWorth_lengthOfRoute_returnScoreAccordingly() {
 		Route R1 = new Route("Vancouver", "Calgary", 4, false);
-		assertTrue(G.routePointWorth(R1) == 7);
+		assertTrue(Game.routePointWorth(R1) == 7);
 		Route R2 = new Route("Portland", "Helena", 5, true);
-		assertFalse(G.routePointWorth(R2) == 11);
+		assertFalse(Game.routePointWorth(R2) == 11);
 	}
 	@Test
 	public void initialSetup_checkForDestDeckRoutesAndPlayers_returnAccordingly() {

@@ -43,10 +43,14 @@ public class Player {
 		return trainCount;
 	}
 
-	public void reduceTrainCount() {
-		trainCount--;
+	public void reduceTrainCount(int len) {
+		this.trainCount -= len;
 	}
-	
+
+	public void addPoints(int pts) {
+		this.score += pts;
+	}
+
 	@Override
 	public String toString() {
 		return "Player: " + name + ", " + color + "; " + "Trains remaining: " + trainCount + "; " + "Score: " + score;
