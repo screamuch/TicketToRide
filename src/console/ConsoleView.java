@@ -9,54 +9,61 @@ public class ConsoleView {
     Game game;
     
     
-    public void printString()
+    public static void printString()
     {
         System.out.println( " Welcome to Ticket To Ride " );
     }
-    public void announceWinner(Player winningPlayer)
+    public static void announceWinner(Player winningPlayer)
     {
-        System.out.println(winningPlayer.getName());
+        System.out.println(winningPlayer.getName() + " has won! ");
     }
-    public void printAskPlayerColor()
+    public static void printAskPlayerColor()
     {
-        System.out.println( " What is your color preference? " );
+        System.out.println( " What is your color preference? (Red, Green, Blue, Black, Yellow) " );
     }
-    public String readPlayerColor(String color)
+    public static String readPlayerColor(String color)
     {
         color = stdin.next();
         return color;
     }
-    public void printAskNumPlayers()
+    public static void printAskNumPlayers()
     {
         System.out.println( " How many players are playing the game? (1-5) " );
     }
-    public int numberOfPlayers(int numPlayers)
+    public static int numberOfPlayers(int numPlayers)
     {
         numPlayers = stdin.nextInt(); 
         return numPlayers; 
     }
-    public void createNewGame()
+    public static void createNewGame()
     {
         Game game = new Game();
     }
-    public void displayRoutes()
+    public static void displayRoutes()
     {
         
     }
 
     public void turn(Player curr) {
-        game.setFinalTurn(Game.outOfTrains(curr));
+        game.setFinalTurn( Game.outOfTrains(curr) );
         String choice; 
-        do{
-        System.out.println( " What would you like to do " );
-        System.out.println( " 1) Claim Route " );
-        System.out.println( " 2) Draw destination ticket " ); 
-        choice = stdin.next(); 
-        }while( choice != "1" || choice != "2" );
-        if( "1".equals(choice) )
+        do {
+            System.out.println( " What would you like to do " );
+            System.out.println( " 1) Claim Route " );
+            System.out.println( " 2) Draw destination ticket " ); 
+            choice = stdin.next(); 
+        } while(choice != "1" || choice != "2");
+        
             
             
         
             
     }
+    public static void main(String[] args) {
+        printString();
+        printAskNumPlayers(); 
+       // numberOfPlayers();
+        printAskPlayerColor(); 
+        
+	}
 }
