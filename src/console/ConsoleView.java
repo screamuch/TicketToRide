@@ -11,7 +11,7 @@ public class ConsoleView {
     
     public void printString()
     {
-        System.out.println( "Welcome to Ticket To Ride\nPlease enter the amount of players(1-4)" );
+        System.out.println( " Welcome to Ticket To Ride " );
     }
     public void announceWinner(Player winningPlayer)
     {
@@ -19,7 +19,7 @@ public class ConsoleView {
     }
     public void printAskPlayerColor()
     {
-        System.out.println("What is your color preference?");
+        System.out.println( " What is your color preference? " );
     }
     public String readPlayerColor(String color)
     {
@@ -28,7 +28,7 @@ public class ConsoleView {
     }
     public void printAskNumPlayers()
     {
-        System.out.println("How many players are playing the game? (1-5) ");
+        System.out.println( " How many players are playing the game? (1-5) " );
     }
     public int numberOfPlayers(int numPlayers)
     {
@@ -48,12 +48,12 @@ public class ConsoleView {
         game.setFinalTurn(Game.outOfTrains(curr));
         String choice; 
         do{
-        System.out.println(" What would you like to do ");
-        System.out.println(" 1) Claim Route");
-        System.out.println(" 2) Draw destination ticket "); 
+        System.out.println( " What would you like to do " );
+        System.out.println( " 1) Claim Route " );
+        System.out.println( " 2) Draw destination ticket " ); 
         choice = stdin.next(); 
-        }while(choice != "1" || choice != "2");
-        if("1".equals(choice))
+        }while( choice != "1" || choice != "2" );
+        if( "1".equals(choice) )
             
             
         
