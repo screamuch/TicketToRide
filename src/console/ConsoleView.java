@@ -1,6 +1,7 @@
 package console;
 
 import java.util.Scanner;
+import model.Game;
 import model.Player;
 
 public class ConsoleView {
@@ -33,7 +34,8 @@ public class ConsoleView {
     }
     public void createNewGame()
     {
-        
+        Game g = new Game(); 
     }
+    
     
 }
