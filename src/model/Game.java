@@ -77,4 +77,9 @@ public class Game {
 		}
 		return unclaimed;
 	}
+        
+        public void setFinalTurn(boolean bool )
+        {
+            finalTurn = bool; 
+        }
 }

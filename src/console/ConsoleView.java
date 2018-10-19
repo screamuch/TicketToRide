@@ -8,10 +8,7 @@ public class ConsoleView {
     private static Scanner stdin = new Scanner(System.in);
     Game game;
     
-    public void setFinalTurn(boolean bool )
-    {
-        game.finalTurn = bool; 
-    }
+    
     public void printString()
     {
         System.out.println( "Welcome to Ticket To Ride\nPlease enter the amount of players(1-4)" );
@@ -31,7 +28,7 @@ public class ConsoleView {
     }
     public void printAskNumPlayers()
     {
-        System.out.println("How many players are playing the game? (1-4) ");
+        System.out.println("How many players are playing the game? (1-5) ");
     }
     public int numberOfPlayers(int numPlayers)
     {
@@ -44,7 +41,15 @@ public class ConsoleView {
     }
 
     public void turn(Player curr) {
-        game.finalTurn = Game.outOfTrains(curr); 
-        if()
+        game.setFinalTurn(Game.outOfTrains(curr));
+        String choice; 
+        do{
+        System.out.println("What would you like to do");
+        System.out.println("1) Claim Route");
+        System.out.println("2) Draw destination ticket"); 
+        choice = stdin.next(); 
+        }while(choice != "1" || choice != "2");
+        
+            
     }
 }
