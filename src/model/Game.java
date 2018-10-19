@@ -41,4 +41,14 @@ public class Game {
 			return true;
 		return false;
 	}
+
+	// Returns an ArrayList of all unclaimed routes
+	public ArrayList<String> printAvailableRoutes() {
+		ArrayList<String> unclaimed = new ArrayList<String>();
+		for (Route r : routes) {
+			if (!r.claimed())
+				unclaimed.add(r.toString());
+		}
+		return unclaimed;
+	}
 }

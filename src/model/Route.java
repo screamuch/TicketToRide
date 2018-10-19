@@ -12,7 +12,7 @@ public class Route {
 	private String city2;
 	private int length;
 	private boolean isDouble;
-	// private Player claimedBy;
+	private Player claimedBy;
 
 	/*
 	 * List of game routes
@@ -37,6 +37,24 @@ public class Route {
 			list.add(r);
 		}
 		return list;
+	}
+
+	// to claim route by player p
+	public boolean claim(Player p) {
+		if (this.claimed())
+			return false;
+		else {
+			this.claimedBy = p;
+			return true;
+		}
+	}
+
+	// tests if the route has been claimed by anybody
+	public boolean claimed() {
+		if (this.claimedBy == null)
+			return false;
+		else
+			return true;
 	}
 
 	public final String getCity1() {
