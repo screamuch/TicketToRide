@@ -1,4 +1,5 @@
 # TicketToRide
+#### by Peter Chudinov (@peterchudinov), Adeeb Rahman (@adman94) and Damir Gafic (@damirgafic)
 DONT YOU FUCKING DARE COMMITING INTO MASTER
 
 DONT EVEN THINK OF TOUCHING MASTER
