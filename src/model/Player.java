@@ -44,7 +44,11 @@ public class Player {
 	}
 
 	public void reduceTrainCount(int len) {
+<<<<<<< HEAD
 		this.trainCount -= len;
+=======
+		trainCount -= len;
+>>>>>>> safety
 	}
 
 	public void addPoints(int pts) {
