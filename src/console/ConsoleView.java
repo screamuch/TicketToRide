@@ -35,20 +35,27 @@ public class ConsoleView {
         numPlayers = stdin.nextInt(); 
         return numPlayers; 
     }
-    public Game createNewGame()
+    public void createNewGame()
     {
         Game game = new Game();
+    }
+    public void displayRoutes()
+    {
+        
     }
 
     public void turn(Player curr) {
         game.setFinalTurn(Game.outOfTrains(curr));
         String choice; 
         do{
-        System.out.println("What would you like to do");
-        System.out.println("1) Claim Route");
-        System.out.println("2) Draw destination ticket"); 
+        System.out.println(" What would you like to do ");
+        System.out.println(" 1) Claim Route");
+        System.out.println(" 2) Draw destination ticket "); 
         choice = stdin.next(); 
         }while(choice != "1" || choice != "2");
+        if("1".equals(choice))
+            
+            
         
             
     }
