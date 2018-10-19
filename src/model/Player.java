@@ -43,8 +43,8 @@ public class Player {
 		return trainCount;
 	}
 
-	public void reduceTrainCount() {
-		trainCount--;
+	public void reduceTrainCount(int len) {
+		trainCount -= len;
 	}
 	
 	@Override

@@ -44,7 +44,10 @@ public class Route {
 		if (this.claimed())
 			return false;
 		else {
+			if (p.getTrainCount() < this.length)
+				return false;
 			this.claimedBy = p;
+			p.reduceTrainCount(this.length);
 			return true;
 		}
 	}
