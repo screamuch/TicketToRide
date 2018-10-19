@@ -7,7 +7,7 @@ public class Game {
 	ArrayList<Player> players;
 	ArrayList<Route> routes;
 	Queue<DestinationTicket> destinationTicketDeck;
-	boolean finalTurn = false;
+	public boolean finalTurn = false;
 
 	public static void main(String[] args) {
 
@@ -36,7 +36,7 @@ public class Game {
 	}
 
 	// This method tests if the player has 2 or less trains left, which indicates end of game
-	public boolean outOfTrains(Player p) {
+	public static boolean outOfTrains(Player p) {
 		if (p.getTrainCount() < 3)
 			return true;
 		return false;
@@ -77,4 +77,9 @@ public class Game {
 		}
 		return unclaimed;
 	}
+        
+        public void setFinalTurn(boolean bool)
+        {
+            finalTurn = bool; 
+        }
 }
