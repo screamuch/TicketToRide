@@ -39,13 +39,11 @@ public class Route {
 		return list;
 	}
 
-	// to claim route by player p
+	// to claim route by player p, check if route is not claimed and the player has enough trains
 	public boolean claim(Player p) {
-		if (this.claimed())
+		if (this.claimed() || p.getTrainCount() < this.length)
 			return false;
 		else {
-			if (p.getTrainCount() < this.length)
-				return false;
 			this.claimedBy = p;
 			p.reduceTrainCount(this.length);
 			return true;
