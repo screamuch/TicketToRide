@@ -44,7 +44,11 @@ public class Player {
 	}
 
 	public void reduceTrainCount(int len) {
-		trainCount -= len;
+		this.trainCount -= len;
+	}
+
+	public void addPoints(int pts) {
+		this.score += pts;
 	}
 	
 	@Override

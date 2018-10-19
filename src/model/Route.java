@@ -46,6 +46,7 @@ public class Route {
 		else {
 			this.claimedBy = p;
 			p.reduceTrainCount(this.length);
+			p.addPoints(Game.routePointWorth(this));
 			return true;
 		}
 	}

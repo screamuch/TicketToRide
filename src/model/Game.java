@@ -23,7 +23,7 @@ public class Game {
 	/*
 	 * compare routes point worth from this function with the table from rules
 	 */ 
-	public int routePointWorth(Route r) {
+	public static int routePointWorth(Route r) {
 		switch (r.getLength()) {
 		case 1: return 1;
 		case 2: return 2;
