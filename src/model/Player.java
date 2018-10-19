@@ -50,7 +50,7 @@ public class Player {
 	public void addPoints(int pts) {
 		this.score += pts;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "Player: " + name + ", " + color + "; " + "Trains remaining: " + trainCount + "; " + "Score: " + score;
