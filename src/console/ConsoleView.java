@@ -67,6 +67,5 @@ public class ConsoleView {
         printAskNumPlayers(); 
        // numberOfPlayers();
         printAskPlayerColor(); 
-        
 	}
 }
