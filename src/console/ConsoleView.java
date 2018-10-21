@@ -13,34 +13,43 @@ public class ConsoleView {
     public static void printString()
     {
         System.out.println( " Welcome to Ticket To Ride " );
-        System.out.println("Each player will be given 4 train cards to start the game");
-        System.out.println("Each player will be given 3 destination cards");
-        System.out.println("Which of 3, they must keep at least 2");
-        System.out.println("During a turn players may either draw 2 train cards, draw 3 destination cards");
-        System.out.println("(Which of 3, the player must keep 1 at least)"); 
-        System.out.println(", or claim a route.");
+        System.out.println(" Each player will be given 4 train cards to start the game");
+        System.out.println(" Each player will be given 3 destination cards");
+        System.out.println(" Which of 3, they must keep at least 2");
+        System.out.println(" During a turn players may either draw 2 train cards, draw 3 destination cards");
+        System.out.println(" (Which of 3, the player must keep 1 at least)"); 
+        System.out.println(" , or claim a route.");
     }
     public static void announceWinner(Player winningPlayer)
     {
         System.out.println(winningPlayer.getName() + " has won! ");
     }
+    public static void printAskPlayerName()
+    {
+        System.out.println(" What is players name? " );
+    }
+    public static void readPlayerName()
+    {
+        String name; 
+        name = stdin.next(); 
+    }
     public static void printAskPlayerColor()
     {
         System.out.println( " What is your color preference? (Red, Green, Blue, Black, Yellow) " );
     }
-    public static String readPlayerColor(String color)
+    public static void readPlayerColor()
     {
+        String color;
         color = stdin.next();
-        return color;
     }
     public static void printAskNumPlayers()
     {
         System.out.println( " How many players are playing the game? (1-5) " );
     }
-    public static int numberOfPlayers(int numPlayers)
+    public static void numberOfPlayers()
     {
-        numPlayers = stdin.nextInt(); 
-        return numPlayers; 
+        int numPlayers;
+        numPlayers = stdin.nextInt();  
     }
     public static void createNewGame()
     {
@@ -63,9 +72,20 @@ public class ConsoleView {
         } while(choice != "1" || choice != "2");         
     }
     public static void main(String[] args) {
-        printString();
+        Player p; 
+        printString(); 
         printAskNumPlayers(); 
-       // numberOfPlayers();
-        printAskPlayerColor(); 
+        numberOfPlayers();  
+        for(int i; i < p.length(); i++)
+        {
+            printAskPlayerName(); 
+            readPlayerName(); 
+            printAskPlayerColor(); 
+            readPlayerColor(); 
+        }
+        
+        
+        
+       
 	}
 }
