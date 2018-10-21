@@ -58,7 +58,10 @@ public class Route {
 		else
 			return true;
 	}
-
+	
+	public Player getClaimedBy() {
+		return claimedBy;
+	}
 	public final String getCity1() {
 		return city1;
 	}

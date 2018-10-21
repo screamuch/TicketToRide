@@ -42,10 +42,6 @@ public class Game {
 		return false;
 	}
 
-	/*
-	 * THESE TWO SHOULD BE MOVED TO ROUTE
-	 */
-
 	// Checks if two cities are connected
 	public boolean citiesConnected(String city1, String city2) {
 		for (Route r : routes) {
@@ -68,6 +64,36 @@ public class Game {
 		return connected;
 	}
 
+	public final void calculateFinalScore() {
+		for (Player p : players) {
+			ArrayList<Route> playerRoutes = getClaimedBy(p);
+			get
+		}
+	}
+	
+	/**
+	 * TODO:
+	 * This shit too retarded rn, gon do this later lol
+	 * y'all fags btw
+	 */
+	private final ArrayList<ArrayList<Route>> getPlayerConnections(ArrayList<Route> rs) {
+		ArrayList<ArrayList<Route>> connections = new ArrayList<ArrayList<Route>>();
+		for (Route r : routes) {
+			
+		}
+		return connections;
+	}
+	
+	public ArrayList<Route> getClaimedBy(Player p) {
+		ArrayList<Route> routesClaimedByPlayer = new ArrayList<Route>();
+		for (Route r : routes) {
+			if (r.getClaimedBy() == p) {
+				routesClaimedByPlayer.add(r);
+			}
+		}
+		return routesClaimedByPlayer;
+	}
+
 	// Returns an ArrayList of all unclaimed routes
 	public ArrayList<String> printAvailableRoutes() {
 		ArrayList<String> unclaimed = new ArrayList<String>();
@@ -78,8 +104,8 @@ public class Game {
 		return unclaimed;
 	}
         
-        public void setFinalTurn(boolean bool)
-        {
-            finalTurn = bool; 
-        }
+    public void setFinalTurn(boolean bool)
+    {
+        finalTurn = bool; 
+    }
 }
