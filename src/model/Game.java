@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Queue;
 
 public class Game {
@@ -67,17 +68,32 @@ public class Game {
 	public final void calculateFinalScore() {
 		for (Player p : players) {
 			ArrayList<Route> playerRoutes = getClaimedBy(p);
-			get
+			ArrayList<ContiniousPath> playerPaths = getPlayerConnections(playerRoutes);
+			List<DestinationTicket> playerTickets = p.getDestinationTickets();
+			for (ContiniousPath cm : playerPaths) {
+				for (DestinationTicket dt : playerTickets) {
+					boolean dtComplete = false;
+					if (cm.liesWithin(dt.getCity1(), dt.getCity2()))
+						dtComplete = true;
+					if (dtComplete)
+						p.addPoints(dt.getPoints());
+					else
+						p.addPoints(dt.getPoints()*-1);
+				}
+			}
 		}
+		/**
+		 * TODO:
+		 * add longest continious path bonus
+		 */
 	}
 	
 	/**
 	 * TODO:
-	 * This shit too retarded rn, gon do this later lol
-	 * y'all fags btw
+	 * figure out a way to get continious path for all player routes
 	 */
-	private final ArrayList<ArrayList<Route>> getPlayerConnections(ArrayList<Route> rs) {
-		ArrayList<ArrayList<Route>> connections = new ArrayList<ArrayList<Route>>();
+	private final ArrayList<ContiniousPath> getPlayerConnections(ArrayList<Route> rs) {
+		ArrayList<ContiniousPath> connections = new ArrayList<ContiniousPath>();
 		for (Route r : routes) {
 			
 		}

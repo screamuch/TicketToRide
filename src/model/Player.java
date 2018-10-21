@@ -13,7 +13,7 @@ public class Player {
 
 	private String name, color;
 	private int trainCount, score;
-	List<DestinationTicket> destinationTickets;
+	private List<DestinationTicket> destinationTickets;
 
 	// this constructor is only for tests
 	public Player(String name, String color, int trainCount, int score) {
@@ -49,6 +49,10 @@ public class Player {
 
 	public void addPoints(int pts) {
 		this.score += pts;
+	}
+
+	public List<DestinationTicket> getDestinationTickets() {
+		return destinationTickets;
 	}
 
 	@Override
