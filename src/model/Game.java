@@ -69,7 +69,7 @@ public class Game {
 	}
 
 	// Returns an ArrayList of all unclaimed routes
-	public ArrayList<String> printAvailableRoutes() {
+	public ArrayList<String> availableRoutes() {
 		ArrayList<String> unclaimed = new ArrayList<String>();
 		for (Route r : routes) {
 			if (!r.claimed())
@@ -82,4 +82,5 @@ public class Game {
         {
             finalTurn = bool; 
         }
+
 }
