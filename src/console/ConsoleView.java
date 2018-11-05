@@ -76,14 +76,14 @@ public class ConsoleView {
         printString(); 
         printAskNumPlayers(); 
         numberOfPlayers();  
-        for(int i; i < p.length(); i++)
+      /*  for(int i; i < p.length(); i++)
         {
             printAskPlayerName(); 
             readPlayerName(); 
             printAskPlayerColor(); 
             readPlayerColor(); 
         }
-        turn(p); 
+        turn(p); */
         
         
         

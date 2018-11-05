@@ -1,18 +1,29 @@
-package test;
-
-import model.*;
-import org.junit.*;
-import static org.junit.Assert.assertTrue;
-import static org.junit.jupiter.api.Assertions.*;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Queue;
+import model.DestinationTicket;
+import model.Game;
+import model.Player;
+import model.Route;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Test;
+import static org.junit.Assert.*;
 
-import org.junit.jupiter.api.Test;
-
-class PlayerTest {
-	ArrayList<Player> players;
+/**
+ *
+ * @author damir
+ */
+public class PlayerTest {
+    
+    	ArrayList<Player> players;
 	Queue<DestinationTicket> destinationTickets;
 	Player P1 = new Player("P1", "Red", 5, 10);
 	Player P2 = new Player("P2", "Blue", 12, 15);
