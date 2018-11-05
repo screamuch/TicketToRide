@@ -71,6 +71,9 @@ public class Route {
 	public final boolean isDouble() {
 		return isDouble;
 	}
+	public final Player getClaimedBy() {
+		return claimedBy;
+	}
 	public String toString() {
 		String output = city1 + " <-> " + city2 + ", " + length;
 		if (this.isDouble())
