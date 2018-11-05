@@ -83,6 +83,7 @@ public class ConsoleView {
             printAskPlayerColor(); 
             readPlayerColor(); 
         }
+        turn(p); 
         
         
         
