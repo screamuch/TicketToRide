@@ -92,9 +92,11 @@ public class Game {
 				cityArr.add(rr.getCity2());
 			}
 			if (cityArr.contains(ticket.getCity1()) && cityArr.contains(ticket.getCity2())) {
+//				p.addPoints(ticket.getPoints());
 				return true;
 			}
 		}
+//		p.addPoints(ticket.getPoints()*-1);
 		return false;
 	}
 	
