@@ -34,7 +34,7 @@ public class TicketToRideGUI extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\damir\\Desktop\\javaScreenShot2018-11-04at9.57.18PM.jpg")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("javaScreenShot2018-11-04at9.57.18PM.jpg")); // NOI18N
 
         jButton2.setText("Draw Destination Card");
 
