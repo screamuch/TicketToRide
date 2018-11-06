@@ -1,6 +1,7 @@
 package model;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Queue;
 
 public class Game {
@@ -8,10 +9,7 @@ public class Game {
 	ArrayList<Route> routes;
 	Queue<DestinationTicket> destinationTicketDeck;
 	public boolean finalTurn = false;
-
-	public static void main(String[] args) {
-
-	}
+	
 
 	// Setting up the game - prepare card decks, set players up
 	public void setup(ArrayList<Player> p) {
@@ -66,6 +64,55 @@ public class Game {
 			}
 		}
 		return connected;
+	}
+	
+	public boolean playerCompletedDestinationTicket(DestinationTicket ticket, Player p) {
+		ArrayList<Route> playerRoutes = new ArrayList<Route>();
+		for (Route r : routes) {
+			// scroll thru all routes and see what are they connected with -> arraylist of arraylists of routes
+			if (r.getClaimedBy() == p)
+				playerRoutes.add(r);
+		}
+		for (Route r : playerRoutes) {
+			// if city1 and city2 has another connection to a player route, continue
+			ArrayList<Route> city1Connections = getConnectedRoutes(r.getCity1());
+			city1Connections.remove(r);
+			ArrayList<Route> city2Connections = getConnectedRoutes(r.getCity2());
+			city1Connections.remove(r);
+			Collection<Route> c = playerRoutes;
+			ArrayList<Route> chain = new ArrayList<Route>();
+			if (city1Connections.contains(c) && city2Connections.contains(c))
+				continue;
+			else {
+				getRouteChain(p, r, chain);
+			}
+			ArrayList<String> cityArr = new ArrayList<String>();
+			for (Route rr : chain) {
+				cityArr.add(rr.getCity1());
+				cityArr.add(rr.getCity2());
+			}
+			if (cityArr.contains(ticket.getCity1()) && cityArr.contains(ticket.getCity2())) {
+//				p.addPoints(ticket.getPoints());
+				return true;
+			}
+		}
+//		p.addPoints(ticket.getPoints()*-1);
+		return false;
+	}
+	
+	public void getRouteChain(Player p, Route r, ArrayList<Route> chain) {
+		for (Route rr : getConnectedRoutes(r.getCity1())) {
+			if (rr.getClaimedBy() != p)
+				continue;
+			chain.add(rr);
+			getRouteChain(p, rr, chain);
+		}
+		for (Route rr : getConnectedRoutes(r.getCity2())) {
+			if (rr.getClaimedBy() != p)
+				continue;
+			chain.add(rr);
+			getRouteChain(p, rr, chain);
+		}
 	}
 
 	// Returns an ArrayList of all unclaimed routes
