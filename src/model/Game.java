@@ -10,6 +10,9 @@ public class Game {
 	Queue<DestinationTicket> destinationTicketDeck;
 	public boolean finalTurn = false;
 	
+	public Game(ArrayList<Player> players) {
+		this.setup(players);
+	}
 
 	// Setting up the game - prepare card decks, set players up
 	public void setup(ArrayList<Player> p) {
@@ -125,9 +128,9 @@ public class Game {
 		return unclaimed;
 	}
         
-        public void setFinalTurn(boolean bool)
-        {
-            finalTurn = bool; 
-        }
+    public void setFinalTurn(boolean bool)
+    {
+        finalTurn = bool; 
+    }
 
 }
