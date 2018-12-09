@@ -69,11 +69,62 @@ public class Game {
 		return connected;
 	}
 	
+	public ArrayList<String> getPlayerRoutes(Player p) {
+		ArrayList<String> routeStrings = new ArrayList<String>();
+		for (Route r : routes) {
+			if (r.getClaimedBy() == null)
+				continue;
+			if (r.getClaimedBy().getName().equals(p.getName()))
+				routeStrings.add(r.toString());
+		}
+		return routeStrings;
+	}
+	
+	public ArrayList<String> getPlayerDestinationTx(Player p) {
+		ArrayList<String> destTxStrings = new ArrayList<String>();
+		for (DestinationTicket tx : p.destinationTickets) {
+			destTxStrings.add(tx.toString());
+		}
+		return destTxStrings;
+	}
+	
+	public Player determineWinner() {
+		int playerScore[] = new int[players.size()];
+		for (int i = 0; i < players.size(); i++) {
+			Player p = players.get(i);
+			for (DestinationTicket tx : p.destinationTickets) {
+				playerCompletedDestinationTicket(tx, p);
+			}
+			playerScore[i] = p.getScore();
+		}
+		int winnerIndex = getMax(playerScore);
+		Player winner = players.get(winnerIndex);
+		return winner;
+	}
+	
+	// taken from http://java.candidjava.com/tutorial/find-the-index-of-the-largest-number-in-an-array.htm
+	private int getMax(int a[]) {
+		int max = a[0];
+		int index = 0;
+	
+		for (int i = 0; i < a.length; i++) 
+		{
+			if (max < a[i]) 
+			{
+				max = a[i];
+				index = i;
+			}
+		}
+		return index;
+	}
+	
 	public boolean playerCompletedDestinationTicket(DestinationTicket ticket, Player p) {
 		ArrayList<Route> playerRoutes = new ArrayList<Route>();
 		for (Route r : routes) {
 			// scroll thru all routes and see what are they connected with -> arraylist of arraylists of routes
-			if (r.getClaimedBy() == p)
+			if (r.getClaimedBy() == null)
+				continue;
+			if (r.getClaimedBy().getName().equals(p.getName()))
 				playerRoutes.add(r);
 		}
 		for (Route r : playerRoutes) {
@@ -95,23 +146,23 @@ public class Game {
 				cityArr.add(rr.getCity2());
 			}
 			if (cityArr.contains(ticket.getCity1()) && cityArr.contains(ticket.getCity2())) {
-//				p.addPoints(ticket.getPoints());
+				p.addPoints(ticket.getPoints());
 				return true;
 			}
 		}
-//		p.addPoints(ticket.getPoints()*-1);
+		p.addPoints(ticket.getPoints()*-1);
 		return false;
 	}
 	
 	public void getRouteChain(Player p, Route r, ArrayList<Route> chain) {
 		for (Route rr : getConnectedRoutes(r.getCity1())) {
-			if (rr.getClaimedBy() != p)
+			if (rr.getClaimedBy().getName().equals(p.getName()))
 				continue;
 			chain.add(rr);
 			getRouteChain(p, rr, chain);
 		}
 		for (Route rr : getConnectedRoutes(r.getCity2())) {
-			if (rr.getClaimedBy() != p)
+			if (rr.getClaimedBy().getName().equals(p.getName()))
 				continue;
 			chain.add(rr);
 			getRouteChain(p, rr, chain);
@@ -119,13 +170,18 @@ public class Game {
 	}
 
 	// Returns an ArrayList of all unclaimed routes
-	public ArrayList<String> availableRoutes() {
-		ArrayList<String> unclaimed = new ArrayList<String>();
+	public ArrayList<Route> availableRoutes() {
+		ArrayList<Route> unclaimed = new ArrayList<Route>();
 		for (Route r : routes) {
 			if (!r.claimed())
-				unclaimed.add(r.toString());
+				unclaimed.add(r);
 		}
 		return unclaimed;
+	}
+	
+	public void drawDestinationTx(Player p) {
+		DestinationTicket retrievedTicket = destinationTicketDeck.poll();
+		p.addDestinationTicket(retrievedTicket);
 	}
         
     public void setFinalTurn(boolean bool)

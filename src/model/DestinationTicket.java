@@ -34,7 +34,7 @@ public class DestinationTicket {
     void setDestCard(String c1, String c2, int pts)
     {
         this.city1 = c1; 
-        this.city2 = c2; 
+        this.city2 = c2;
         this.points = pts; 
     }
     String getCity1()

@@ -13,7 +13,7 @@ public class Player {
 
 	private String name, color;
 	private int trainCount, score;
-	List<DestinationTicket> destinationTickets;
+	ArrayList<DestinationTicket> destinationTickets;
 
 	// this constructor is only for tests
 	public Player(String name, String color, int trainCount, int score) {
@@ -21,6 +21,11 @@ public class Player {
 		this.color = color;
 		this.trainCount = trainCount;
 		this.score = score;
+		this.destinationTickets = new ArrayList<DestinationTicket>();
+	}
+	
+	public void addDestinationTicket(DestinationTicket tx) {
+		destinationTickets.add(tx);
 	}
 
 	// use this constructor for the actual game
@@ -29,6 +34,7 @@ public class Player {
 		this.color = color;
 		this.trainCount = STARTING_TRAINS;
 		this.score = 0;
+		this.destinationTickets = new ArrayList<DestinationTicket>();
 	}
 
 	public String getName() {
@@ -49,6 +55,10 @@ public class Player {
 
 	public void addPoints(int pts) {
 		this.score += pts;
+	}
+	
+	public int getScore() {
+		return score;
 	}
 
 	@Override
